@@ -42,7 +42,7 @@ jobs:
         run: cargo build --verbose --release
       - name: Set program name
         run: echo "PROGRAM_NAME=${GITHUB_REPOSITORY#joeygibson/}" >> $GITHUB_ENV
-      - name: Rename binary
+      - name: Generate binary name
         run: ./scripts/generate-binary-name
         env: 
           OS: ${{ matrix.config.os }}
