@@ -41,12 +41,17 @@ jobs:
         run: cargo test --verbose
       - name: Build for release
         run: cargo build --verbose --release
+      - name: Rename binary
+        run: ./scripts/rename-binary
+        env: 
+          OS: ${{ matrix.config.os }}
       - name: Upload release assets
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.create_release.outputs.upload_url }}
-          asset_name: ac-${{ matrix.config.os }}
-          asset_path: target/release/ac
+          # asset_name: target/ac*
+          # asset_name: ac-${{ matrix.config.os }}
+          asset_path: target/ac
           asset_content_type: application/octet-stream
