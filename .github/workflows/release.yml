@@ -44,7 +44,6 @@ jobs:
         run: ./scripts/rename-binary
         env: 
           OS: ${{ matrix.config.os }}
-          TAG: ${{ github.ref }}
       - name: Upload release assets
         uses: actions/upload-release-asset@v1
         env:

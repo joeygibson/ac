@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -x
 
+TAG=${GITHUB_REF#refs/*/}
 ARCH=x86_64
 
 if [[ "${OS}" == "macOS-latest" ]]; then
