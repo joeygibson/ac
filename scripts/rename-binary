@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -x
 
 ARCH=x86_64
 
@@ -10,5 +11,5 @@ else
     OS=linux
 fi
 
-mv target/debug/verticareader target/verticareader-${TRAVIS_TAG}-${ARCH}-${VENDOR}-${OS}
-chmod 755 target/verticareader-${TRAVIS_TAG}-${ARCH}-${VENDOR}-${OS}
+mv target/debug/verticareader target/ac-${TRAVIS_TAG}-${ARCH}-${VENDOR}-${OS}
+chmod 755 target/ac-${TRAVIS_TAG}-${ARCH}-${VENDOR}-${OS}
