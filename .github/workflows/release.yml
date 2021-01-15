@@ -42,7 +42,7 @@ jobs:
       - name: Build for release
         run: cargo build --verbose --release
       - name: Upload release assets
-        uses: actions/upload-release-assets@v1
+        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
