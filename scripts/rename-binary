@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -x
 
-env
+# Set this to the name of the thing we're building
+PROGRAM_NAME=ac
 
 TAG=${GITHUB_REF#refs/*/v}
 ARCH=x86_64
@@ -14,8 +15,5 @@ else
     OS=linux
 fi
 
-# mv target/release/ac target/ac-${TAG}-${ARCH}-${VENDOR}-${OS}
-# chmod 755 target/ac-${TAG}-${ARCH}-${VENDOR}-${OS}
-
-chmod 755 target/release/ac
-echo "RELEASE_NAME=ac-${TAG}-${ARCH}-${VENDOR}-${OS}" >> $GITHUB_ENV
+chmod 755 target/release/${PROGRAM_NAME}
+echo "RELEASE_NAME=${PROGRAM_NAME}-${TAG}-${ARCH}-${VENDOR}-${OS}" >> $GITHUB_ENV
