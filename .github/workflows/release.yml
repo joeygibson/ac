@@ -46,6 +46,8 @@ jobs:
         run: ./scripts/generate-binary-name
         env: 
           OS: ${{ matrix.config.os }}
+      - name: Set permissions
+        run: chmod 755 target/release/${{ env.PROGRAM_NAME }}
       - name: Upload release assets
         uses: actions/upload-release-asset@v1
         env:
