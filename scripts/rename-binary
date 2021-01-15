@@ -11,5 +11,5 @@ else
     OS=linux
 fi
 
-mv target/debug/verticareader target/ac-${TAG}-${ARCH}-${VENDOR}-${OS}
+mv target/debug/ac target/ac-${TAG}-${ARCH}-${VENDOR}-${OS}
 chmod 755 target/ac-${TAG}-${ARCH}-${VENDOR}-${OS}
