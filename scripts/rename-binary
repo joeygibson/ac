@@ -12,5 +12,5 @@ else
     OS=linux
 fi
 
-mv target/debug/ac target/ac-${TAG}-${ARCH}-${VENDOR}-${OS}
+mv target/release/ac target/ac-${TAG}-${ARCH}-${VENDOR}-${OS}
 chmod 755 target/ac-${TAG}-${ARCH}-${VENDOR}-${OS}
